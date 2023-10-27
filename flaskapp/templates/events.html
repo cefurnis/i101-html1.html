@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+
+<h1>Choose An Event!</h1>
+<form method="get" name="events"></form>
+
+<div class = "row">
+{% for event in events %}
+<div class="col-4">
+<div class="card my-3" style='width: 18rem;'>
+    <a href="{{url_for('event', event_id=event['name_event'])}}"> View Event Details!</a>
+        <div class="'card-body">   
+            <img class="img-fluid" src="{{url_for('static', filename='images/birthday_party.png')}}">
+            <h2>{{event['name']}}</h2>
+            <h2>{{event['date']}}</h2>
+            <h2>{{event['start']}}</h2>
+        </div>
+    </a>
+</div>
+</div>
+
+{% endfor %}
+</div>
+{% endblock %}

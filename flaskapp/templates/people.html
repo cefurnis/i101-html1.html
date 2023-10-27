@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+
+<img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='flaskapp/images/birthday-party.png') }}" alt="" width="400" height="250">
+<h1>PartyTime People</h1>
+<form method="get" name="people"></form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Date of Birth</th>
+        </tr>
+    </thead>
+{%for people in people%}
+    <tbody>
+        <tr>
+        <td>{{people[people_name]}}</td>
+        <td>{{people[email_address]}}</td>
+        <td>{{people[mobile_number]}}</td>
+        <td>{{people[home_address]}}</td>
+        <td>{{people[birth_date]}}</td>
+        </tr>
+{%endfor%}
+    </tbody>
+
+</table>
+
+{%endblock%}

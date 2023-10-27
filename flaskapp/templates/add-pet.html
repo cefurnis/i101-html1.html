@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Add a Pet{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Add a Pet!</h1>
+<form method="post" name="add_pet">
+    <div class="mb-3">
+        <label for="name">Type of Pet:</label>
+        <input type="text" id="name" name="name" value="Enter type of pet">
+    </div>
+    <div class="mb-3">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="3" width="33">Describe your pet!
+        </textarea>
+    </div>
+    <div class="mb-3">
+        <label for="detail_1">Detail 1:</label>
+        <input type="text" id="detail_1" name="detail_1" >
+    </div>
+    <div class="mb-3">
+        <label for="detail_2">Detail 2:</label>
+        <input type="text" id="detail_2" name="detail_2" >
+    </div>
+    <div class="mb-3">
+        <label for="detail_3">Detail 3:</label>
+        <input type="text" id="detail_3" name="detail_3" >
+    </div>
+    <div class="mb-3">
+        <label for="image_path">Image Path:</label>
+        <input type="text" id="image_path" name="image_path" >
+    </div>
+    <div class="mb-3">
+        <label for="rating">Pet Rating:</label>
+        <input type="text" id="rating" name="rating" >
+    </div>
+    <button class="btn btn-primary"  type="submit" value="submit">ADD PET</button>
+    <button class="btn btn-danger" type="reset" value="reset">RESET</button>
+</form>
+
+{% endblock %}

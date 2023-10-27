@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Quiz Results{% endblock %}
+
+{% block content %}
+{% if score < 6 %}
+    {% set result = results[0] %}
+    {% set explanation = explanation [0] %}
+{% if score < 10 %}
+    {% set result = results[1] %}
+    {% set explanation = explanation [1] %}
+{% if score < 15 %}
+    {% set result = results[2] %}
+    {% set explanation = explanation [2] %}
+{% else %}
+    {% set result = results[3] %}
+    {% set explanation = explanation [3] %}
+{% endif %}
+
+
+
+
+<h2>Pet Quiz Results</h2>
+<img src="{{url_for('static', filename='images/pet-quiz-result.jpeg')}}">
+<h2 class="mt-3">{{result}}</h2>
+<p class="mt-3">{{explanation}}</p>
+<a href="{{url_for('take_quiz')}}">
+    <button class="btn btn-primary" value="Retake Quiz">Retake Quiz</button> 
+</a>
+{% endblock %}
+FooterIndiana University
+Indiana University

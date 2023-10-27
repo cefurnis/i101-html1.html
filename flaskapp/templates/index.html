@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}PartyTime Events{% endblock %}
 
 {% block content %}
-<h1 class="display-4">Hello Flask!</h1>
-
-<p class="lead">This is a template to get you spinning up with <code>flask</code> and <code>Bootstrap</code>.</p>
-
-<img class="img-fluid" src="{{ url_for('static', filename='images/doing-great.jpg') }}">
-
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/birthday-party.png') }}" alt="" width="400" height="250">
+    <h1 class="display-5 fw-bold">PartTime Events!</h1>
+    <form method="get" name="index"></form>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Have a fun party!</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{{url_for('static', filename='images/PartyEvents_logo.jpeg')}}">
+        <a href=""><button type="button" class="btn btn-primary btn-lg px-4 gap-3">See Events!</button></a>
+        <a href=""><button type="button" class="btn btn-primary btn-lg px-4 gap-3">See Venues!</button></a>
+        <a href=""><button type="button" class="btn btn-primary btn-lg px-4 gap-3">See People!</button></a>
+       </div>
+    </div>
+  </div>
 {% endblock %}

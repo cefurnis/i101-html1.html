@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}PartyTime Events{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
+<form method="get" name="base"></form>
 
 <body class="d-flex flex-column h-100">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url_for('index') }}">Site Title</a>
+                <a class="navbar-brand" href="{{ url_for('index') }}">PartyTime Events</a>
 
                 <div class="justify-content-end">
 
@@ -27,13 +28,20 @@
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">navlink-1</a>
+                                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('list_events') }}">Events</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">navlink-2</a>
+                                <a class="nav-link" href="{{ url_for('list_people') }}">People</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('list_venues') }}">Venues</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -58,7 +66,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>

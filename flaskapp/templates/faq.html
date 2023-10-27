@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Pick A Pet Home{% endblock %}
+
+{% block content %}
+<h1>Pick a Pet!</h1>
+<dl>
+    <!-- Hint: use a Jinja 'for' loop -->
+    <dt class="pt-3">first question?</dt>
+    <dd>first answer</dd>
+    <dt class="pt-3">second question?</dt>
+    <dd>secondl answer</dd>
+    </dl>
+    
+
+
+{% for pet in pets %}
+    <h2>{{pet}}</h2>
+    <img src="{{url_for('static', filename= pets[pet]['image_path'])}}" alt="{{pet}}">
+{% endfor %}
+
+{% endblock %}

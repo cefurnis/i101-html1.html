@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Quiz{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Pet Quiz</h1>
+
+<form method="post" name="quiz">
+<!-- space,ick-factor,time,budget -->
+  <!-- LIVING SPACE SIZE AND SPACE -->
+  <fieldset class="mt-3 w-75">
+    <!-- Question 1. Add the required form elements here! Delete the values-->
+    <label for="space">How much living space and outdoor space do you have available?</label>
+    <select id="space" name="space">
+        <option value="1">Small living space, little access to outdoor spaces</option>
+        <option value="2">Small living space, but access to outdoors</option>
+        <option value="3">Moderate living space, no access to outdoors</option>
+        <option value="4">Moderate living space, access to outdoors</option>
+        <option value="5">enerous living space, access to outdoors</option>
+    </select>
+  </fieldset>
+
+  <!-- ICKY FACTORS - CLEANING / POOP / TRAINING -->
+  <fieldset class="mt-3">
+    <!-- Quesation 2. Add the required form elements here! -->
+    <legend for="icky">Check all that you agree with:</legend>
+    <ul>
+        <li><label for="1">Cleaning a tank / cage / bedding weekly is not a problem</label>
+            <input id="1" type="checkbox" name="icky" value="1">
+        </li>
+        <li>
+            <label for="2"> I don't mind daily poop duty</label>
+            <input id="2" type="checkbox" name="icky" value="1">
+        </li>
+        <li>
+            <label for="3">Spending a lot of time training is part of my expectation </label>
+            <input id="3" type="checkbox" name="icky" value="1">
+        </li>
+        <li>
+            <label for="4">Some adjustment period with my new pet is expected</label>
+            <input id="4" type="checkbox" name="icky" value="1">
+        </li>
+        <li>
+            <label for="5">I don't mind vomit!</label>
+            <input id="5" type="checkbox" name="icky" value="1">
+        </li>
+    </ul>
+  </fieldset>
+  
+  <!-- ACTIVITY LEVEL / TIME AVAILABLE -->
+  <fieldset class="mt-3">
+    <!-- Quesation 3. Add the required form elements (choose one option) here! -->
+    <legend>How much time and energy do you have for your pet?</legend>
+    <ul>
+        <li>
+            <label for="r1">I have a lot of time and expectation for an active pet</label>
+            <input id="r1" type="radio" name="time" value="5">
+        </li>
+        <li>
+            <label for="r2">I have a flexible schedule, but I don't want to be tied to my house multiple times a day</label>
+            <input id="r2" type="radio" name="time" value="4">
+        </li>
+        <li>
+            <label for="r3">I'm home every day, but I don't want to exercise the pet</label>
+            <input id="r3" type="radio" name="time" value="3">
+        </li>
+        <li>
+            <label for="r4">I'm often not home much, and I need a pet that doesn't need my constant attention</label>
+            <input id="r4" type="radio" name="time" value="2">
+        </li>
+        <li>
+            <label for="r5">I'm often busy or away from home</label>
+            <input id="r5" type="radio" name="time" value="1">
+        </li>
+    </ul>
+  </fieldset> 
+  <!-- BUDGET  -->
+  <fieldset class="my-3 w-75">
+        <!-- Quesation 2. Add the required form elements here! Hint: Use the range input type
+        to return a value between 1 and 5!-->
+        <legend>What is your budget, including daily care and feeding and veterinary care?</legend>
+        <label for="budget">Budget: low (left) to high (right)</label>
+        <input type="range" id="budget" name="budget" min="1" max="5">
+  </fieldset>
+
+  <button class="btn btn-primary" type="submit" value="submit">FIND PET</button>
+  <button class="btn btn-secondary" type="reset" value="reset">RESET</button>
+</form>
+
+{% endblock %}

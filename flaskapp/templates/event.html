@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="{{url_for('static', filename=event[index]['image_path'])}}" class = "d-block mx-lg-auto img-fluid" alt="{{event[index]['name_event']}}" width="300" height="500">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">{{event[index]['name_event']}}</h1>
+            <form method="get" name="event"></form>
+            <ul>
+                <li><strong>Date: </strong>{{event[index]['event_date']}}</li>
+                <li><strong>Start Time: </strong>{{event[index]['start_time']}}</li>
+                <li><strong>End Time: </strong>{{event[index]['end_time']}}</li>
+                <li><strong>Venue: </strong>{{event[index]['event_venue']}}</li>
+                <li><strong>Maximum Attendees: </strong>{{event[index]['max_attendees']}}</li>
+                <li><strong>Invitation: </strong>{{event[index]['text_invitation']}}</li>
+                <li><strong>Event Planner: </strong>{{event[index]['party_planner']}}</li>
+                <li><strong>PartyTime Rental Items: </strong>{{event[index]['rental_items']}}</li>
+                <li><strong>Event Notes: </strong>{{event[index]['Notes']}}</li>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
